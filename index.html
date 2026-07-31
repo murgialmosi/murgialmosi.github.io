@@ -1,147 +1,98 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Остатки продукции Online — Мурғи Алмосӣ</title>
-  <meta name="description" content="Актуальные остатки продукции на складах ҶДММ «Мурғи Алмосӣ».">
-  <meta property="og:title" content="Остатки продукции Online">
-  <meta property="og:description" content="Актуальные остатки продукции ҶДММ «Мурғи Алмосӣ».">
-  <meta name="theme-color" content="#c9152d">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Мурғи Алмосӣ — Остатки продукции</title>
+  <meta name="description" content="Актуальные остатки продукции ҶДММ «Мурғи Алмосӣ»">
   <style>
-    :root {
-      --red: #cf1832;
-      --red-dark: #a70f25;
-      --blue: #0d4da1;
-      --green: #1d7a3a;
-      --cream: #fffaf3;
-      --ink: #20242b;
-      --muted: #68707c;
-      --line: #ece7df;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    * { box-sizing: border-box; }
-
     body {
-      margin: 0;
       min-height: 100vh;
-      font-family: Inter, "Segoe UI", Arial, sans-serif;
-      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
       background:
-        radial-gradient(circle at 15% 10%, rgba(207,24,50,.08), transparent 30%),
-        radial-gradient(circle at 85% 90%, rgba(13,77,161,.08), transparent 32%),
-        var(--cream);
-      display: grid;
-      place-items: center;
+        radial-gradient(circle at top left, rgba(198, 25, 48, 0.10), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(18, 83, 160, 0.10), transparent 35%),
+        #fffaf5;
+      color: #242424;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       padding: 24px;
     }
 
     .card {
-      width: min(720px, 100%);
-      background: rgba(255,255,255,.96);
-      border: 1px solid var(--line);
+      width: 100%;
+      max-width: 760px;
+      background: #ffffff;
       border-radius: 28px;
-      box-shadow: 0 24px 70px rgba(32,36,43,.13);
       overflow: hidden;
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.12);
+      border: 1px solid #eee8e1;
     }
 
-    .topline {
+    .top-line {
       height: 8px;
-      background: linear-gradient(90deg, var(--red), var(--blue));
+      background: linear-gradient(90deg, #c81930, #0f4f9f);
     }
 
     .content {
-      padding: 42px 34px 32px;
+      padding: 46px 34px 34px;
       text-align: center;
     }
 
-    .brand {
-      display: inline-flex;
+    .logo-wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 22px;
+    }
+
+    .logo {
+      width: 96px;
+      height: 96px;
+      border: 4px solid #c81930;
+      border-radius: 50%;
+      display: flex;
       align-items: center;
-      gap: 16px;
-      margin-bottom: 24px;
+      justify-content: center;
+      font-size: 48px;
+      background: #fff;
+      box-shadow: inset 0 0 0 7px #fff, inset 0 0 0 9px rgba(200, 25, 48, 0.2);
     }
 
-    .mark {
-      width: 82px;
-      height: 82px;
-      border: 4px solid var(--red);
-      border-radius: 50%;
-      position: relative;
-      display: grid;
-      place-items: center;
-      color: var(--red);
-      font-size: 42px;
-      background: white;
-      box-shadow: inset 0 0 0 6px #fff, inset 0 0 0 8px rgba(207,24,50,.25);
-    }
-
-    .mark::after {
-      content: "◆";
-      position: absolute;
-      right: -4px;
-      bottom: 4px;
-      font-size: 18px;
-      color: var(--red);
-      background: white;
-      border-radius: 50%;
-      padding: 1px 4px;
-    }
-
-    .brand-text {
-      text-align: left;
-      line-height: .95;
-    }
-
-    .brand-name {
-      margin: 0;
+    .brand {
       font-family: Georgia, "Times New Roman", serif;
+      color: #c81930;
+      font-size: clamp(38px, 7vw, 62px);
+      line-height: 1;
       font-weight: 700;
-      color: var(--red);
-      font-size: clamp(34px, 7vw, 58px);
-      letter-spacing: -.5px;
+      margin-bottom: 8px;
     }
 
     .tagline {
-      margin: 7px 0 0;
-      color: var(--blue);
+      color: #0f4f9f;
+      font-size: 19px;
       font-weight: 700;
-      font-size: 18px;
-    }
-
-    .divider {
-      width: 170px;
-      height: 3px;
-      margin: 8px auto 30px;
-      background: linear-gradient(90deg, transparent, var(--red), transparent);
-      position: relative;
-    }
-
-    .divider::after {
-      content: "◆";
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -53%);
-      color: var(--red);
-      background: white;
-      padding: 0 9px;
-      font-size: 18px;
+      margin-bottom: 34px;
     }
 
     h1 {
-      margin: 0;
-      font-size: clamp(30px, 6vw, 48px);
-      line-height: 1.12;
-      color: var(--ink);
+      font-size: clamp(30px, 5vw, 46px);
+      line-height: 1.15;
+      margin-bottom: 18px;
     }
 
-    .lead {
-      max-width: 540px;
-      margin: 18px auto 28px;
-      color: var(--muted);
+    .description {
+      max-width: 560px;
+      margin: 0 auto 30px;
       font-size: 18px;
       line-height: 1.55;
+      color: #666d78;
     }
 
     .button {
@@ -149,126 +100,145 @@
       align-items: center;
       justify-content: center;
       gap: 12px;
-      min-height: 60px;
-      padding: 0 30px;
-      border-radius: 16px;
+      min-height: 62px;
+      padding: 0 32px;
+      background: linear-gradient(135deg, #19763a, #26a14f);
+      color: #fff;
       text-decoration: none;
-      background: linear-gradient(135deg, var(--green), #24964a);
-      color: white;
-      font-size: 19px;
-      font-weight: 800;
-      box-shadow: 0 12px 28px rgba(29,122,58,.26);
-      transition: transform .18s ease, box-shadow .18s ease;
+      border-radius: 16px;
+      font-size: 20px;
+      font-weight: 700;
+      box-shadow: 0 14px 30px rgba(25, 118, 58, 0.28);
+      transition: 0.2s ease;
     }
 
     .button:hover {
       transform: translateY(-2px);
-      box-shadow: 0 16px 34px rgba(29,122,58,.32);
+      box-shadow: 0 18px 36px rgba(25, 118, 58, 0.34);
     }
 
-    .button:active { transform: translateY(0); }
-
     .note {
-      margin-top: 14px;
-      color: var(--muted);
+      margin-top: 13px;
+      color: #858b94;
       font-size: 14px;
     }
 
     .badges {
+      margin-top: 36px;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 12px;
-      margin: 34px 0 24px;
     }
 
     .badge {
-      border: 1px solid #e6e9ef;
-      border-radius: 16px;
-      padding: 14px 8px;
-      background: #fff;
-      color: var(--blue);
-      font-weight: 750;
+      border: 1px solid #e4e8ee;
+      border-radius: 15px;
+      padding: 15px 8px;
+      color: #0f4f9f;
       font-size: 13px;
+      font-weight: 700;
+      background: #fff;
     }
 
-    .badge-icon {
+    .badge span {
       display: block;
       font-size: 25px;
       margin-bottom: 7px;
     }
 
     .contact {
-      border-top: 1px solid var(--line);
+      margin-top: 30px;
       padding-top: 22px;
-      color: var(--muted);
+      border-top: 1px solid #ece7e0;
+      color: #69717d;
+      line-height: 1.7;
       font-size: 15px;
-      line-height: 1.65;
     }
 
-    .contact strong { color: var(--ink); }
+    .contact strong {
+      color: #262626;
+    }
 
-    .footer {
-      background: #faf8f4;
-      border-top: 1px solid var(--line);
-      padding: 16px 24px;
+    .contact a {
+      color: #0f4f9f;
+      text-decoration: none;
+    }
+
+    footer {
+      padding: 16px 20px;
       text-align: center;
-      color: #858b94;
+      background: #faf8f4;
+      border-top: 1px solid #ece7e0;
+      color: #8a8f98;
       font-size: 13px;
     }
 
-    @media (max-width: 560px) {
-      .content { padding: 32px 20px 26px; }
-      .brand { gap: 11px; }
-      .mark { width: 64px; height: 64px; font-size: 33px; }
-      .tagline { font-size: 15px; }
-      .badges { grid-template-columns: repeat(2, 1fr); }
-      .button { width: 100%; }
+    @media (max-width: 600px) {
+      body {
+        padding: 14px;
+      }
+
+      .content {
+        padding: 34px 20px 28px;
+      }
+
+      .logo {
+        width: 78px;
+        height: 78px;
+        font-size: 39px;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .badges {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
   </style>
 </head>
 <body>
   <main class="card">
-    <div class="topline"></div>
+    <div class="top-line"></div>
 
     <section class="content">
-      <div class="brand">
-        <div class="mark" aria-hidden="true">🐓</div>
-        <div class="brand-text">
-          <p class="brand-name">Мурғи Алмосӣ</p>
-          <p class="tagline">Сифати табиӣ</p>
-        </div>
+      <div class="logo-wrap">
+        <div class="logo" aria-label="Логотип Мурғи Алмосӣ">🐓</div>
       </div>
 
-      <div class="divider"></div>
+      <div class="brand">Мурғи Алмосӣ</div>
+      <div class="tagline">Сифати табиӣ</div>
 
       <h1>Остатки продукции Online</h1>
-      <p class="lead">
-        Здесь доступны актуальные остатки продукции на складах
-        ҶДММ «Мурғи Алмосӣ».
+
+      <p class="description">
+        Здесь вы можете посмотреть актуальные остатки продукции
+        на складах ҶДММ «Мурғи Алмосӣ».
       </p>
 
       <a class="button" href="https://docs.google.com/spreadsheets/d/1uEqIJKroCtl65bb79aX_rX2eR2AYB43RNrWCVanYCuo/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
         <span>📦</span>
         <span>Открыть остатки</span>
       </a>
-      <div class="note">Таблица откроется в новой вкладке</div>
 
-      <div class="badges" aria-label="Преимущества">
-        <div class="badge"><span class="badge-icon">☪</span>Ҳалол</div>
-        <div class="badge"><span class="badge-icon">✓</span>HACCP</div>
-        <div class="badge"><span class="badge-icon">🔪</span>Мурғи дасткуш</div>
-        <div class="badge"><span class="badge-icon">🌿</span>Сифати табиӣ</div>
+      <div class="note">Google Таблица откроется в новой вкладке</div>
+
+      <div class="badges">
+        <div class="badge"><span>☪</span>Ҳалол</div>
+        <div class="badge"><span>✓</span>HACCP</div>
+        <div class="badge"><span>🔪</span>Мурғи дасткуш</div>
+        <div class="badge"><span>🌿</span>Сифати табиӣ</div>
       </div>
 
       <div class="contact">
         <strong>ҶДММ «Мурғи Алмосӣ»</strong><br>
-        Телефон: <a href="tel:+992446208080" style="color:#0d4da1;text-decoration:none;">+992 44 620-80-80</a>
+        Телефон:
+        <a href="tel:+992446208080">+992 44 620-80-80</a>
       </div>
     </section>
 
-    <footer class="footer">
-      © ҶДММ «Мурғи Алмосӣ»
-    </footer>
+    <footer>© 2026 ҶДММ «Мурғи Алмосӣ»</footer>
   </main>
 </body>
 </html>
